@@ -8,7 +8,7 @@
 
 The design enables:
 
-- Support for **multiple base models** and **LoRA adapters** within a shared cluster [Not supported in
+- Support for **multiple base models** within a shared cluster [Not supported in
 Phase1]
 - Efficient routing based on **KV cache locality**, **prefix**, **session affinity**, **load**, and
 **model metadata**
@@ -119,8 +119,8 @@ has the following form:
 - name: aName
   type: a-type
   parameters:
-    parm1: val1
-    parm2: val2
+    param1: val1
+    param2: val2
 ```
 The fields in a plugin entry are:
 - **name** (optional): provides a name by which the plugin instance can be referenced. If this
@@ -210,7 +210,7 @@ Filters out pods using a standard Kubernetes label selector.
 
 - **Type**: `by-label-selector`
 - **Parameters**: A standard Kubernetes label selector.
-  - `matchLabels`: map of `{key,value}` pairs. If more than one pair are in the map, all of the keys are checked and the results are ANDed together.
+  - `matchLabels`: map of `{key,value}` pairs. If more than one pair are in the map, all of the keys are checked and the results are combined with AND logic.
 
 ---
 
